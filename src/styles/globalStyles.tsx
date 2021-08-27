@@ -1,5 +1,5 @@
-import tw, { theme, globalStyles } from 'twin.macro'
-import { global } from '../stitches.config'
+import tw, { theme, globalStyles } from "twin.macro"
+import { global } from "../../stitches.config"
 
 const customStyles = {
   body: {
