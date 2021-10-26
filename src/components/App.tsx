@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber"
 import { styled } from "stitches.config"
 import tw from "twin.macro"
 import "../materials/BasicShaderMaterial"
-import Ball from "./Ball"
 import Earth from "./Earth"
 
 const FullScreenDiv = styled("div", {

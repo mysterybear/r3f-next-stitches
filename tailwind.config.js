@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   theme: {
     screens: {
@@ -6,10 +7,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        electric: '#db00ff',
-        ribbon: '#0047ff',
+        electric: "#db00ff",
+        ribbon: "#0047ff",
       },
-    }
+    },
   },
   plugins: [],
 }

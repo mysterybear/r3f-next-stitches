@@ -8,13 +8,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "clean": "rimraf .next"
   },
   "dependencies": {
     "@react-spring/three": "^9.2.4",
     "@react-three/drei": "^7.5.0",
     "@react-three/fiber": "^7.0.6",
-    "@stitches/react": "^0.2.2",
+    "@stitches/react": "^1.2.5",
     "@types/three": "^0.131.0",
     "@use-gesture/react": "^10.0.0-beta.22",
     "fp-ts": "^2.11.1",
@@ -31,6 +32,7 @@
     "@types/node": "^15.14.0",
     "@types/react": "^17.0.13",
     "babel-plugin-macros": "^3.1.0",
+    "rimraf": "^3.0.2",
     "tailwindcss": "^2.2.4",
     "twin.macro": "^2.6.1",
     "typescript": "^4.3.5"
