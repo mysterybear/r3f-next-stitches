@@ -1,12 +1,12 @@
-import React from 'react'
-import tw, { styled } from 'twin.macro'
-import { Logo, Button } from '../components'
+import React from "react"
+import tw, { styled } from "twin.macro"
+import { Logo, Button } from "../components"
 
 const Container = styled.div({
   ...tw`flex flex-col items-center justify-center h-screen`,
   variants: {
     hasBackground: {
-      true: tw`bg-gradient-to-b from-electric to-ribbon`,
+      true: tw`bg-gradient-to-b`,
     },
   },
 })

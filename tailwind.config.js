@@ -1,16 +1,16 @@
 const defaultTheme = require("tailwindcss/defaultTheme")
+const colors = require("tailwindcss/colors")
 
 module.exports = {
   theme: {
+    colors,
+    spacing: {
+      ...defaultTheme.spacing,
+    },
     screens: {
       ...defaultTheme.screens,
     },
-    extend: {
-      colors: {
-        electric: "#db00ff",
-        ribbon: "#0047ff",
-      },
-    },
   },
   plugins: [],
+  darkMode: "media",
 }
