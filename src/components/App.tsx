@@ -1,11 +1,12 @@
 import { Canvas } from "@react-three/fiber"
 import { styled } from "stitches.config"
-import tw from "twin.macro"
 import "../materials/BasicShaderMaterial"
 import Earth from "./Earth"
 
 const FullScreenDiv = styled("div", {
-  ...tw`fixed w-full h-full`,
+  position: "fixed",
+  height: "100%",
+  width: "100%",
   "& canvas": {
     touchAction: "none",
   },

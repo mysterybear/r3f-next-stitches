@@ -1,10 +1,11 @@
 import { createStitches } from "@stitches/react"
-import { map } from "fp-ts/lib/ReadonlyRecord"
-import tailwindConfig from "./tailwind.config"
+import { map } from "fp-ts/lib/Record"
+import tailwindColors from "tailwindcss/colors"
+import defaultTheme from "tailwindcss/defaultTheme"
 
 type FlatMap = Record<string, string>
 type StringPair = [string, string]
-type TailwindColors = typeof tailwindConfig.theme.colors
+type TailwindColors = typeof tailwindColors
 
 const { entries, fromEntries } = Object
 
@@ -22,22 +23,22 @@ export const stitches = createStitches({
   prefix: "",
   theme: {
     colors: {
-      ...flattenTailwindColors(tailwindConfig.theme.colors),
+      ...flattenTailwindColors(tailwindColors),
       // Alias
       primary: "$gray900",
       secondary: "$gray700",
       tertiary: "$gray500",
       link: "$blue500",
-      background: "$gray50",
+      background: "$gray100",
       border: "$gray900",
     },
-    space: tailwindConfig.theme.spacing,
+    space: {
+      ...defaultTheme.spacing,
+    },
   },
   utils: {},
   media: {
-    ...map((px) => `(min-width: ${px})`)(
-      tailwindConfig.theme.screens as FlatMap
-    ),
+    ...map((px) => `(min-width: ${px})`)(defaultTheme.screens as FlatMap),
     dark: "(prefers-color-scheme: dark)",
   },
 })

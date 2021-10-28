@@ -1,10 +1,8 @@
 import { globalCss } from "stitches.config"
-import { globalStyles } from "twin.macro"
-
-const customStyles = {}
+import { reset } from "stitches-reset"
 
 const styles = () => {
-  globalCss({ ...customStyles, ...globalStyles })()
+  globalCss(reset)()
 }
 
 export default styles
