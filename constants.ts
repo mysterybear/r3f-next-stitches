@@ -1,1 +1,1 @@
-export const COLORS = ["black", "white", "gray", "red", "green", "blue"]
+export const TAILWIND_COLOR_SELECTION = ["gray", "violet"]

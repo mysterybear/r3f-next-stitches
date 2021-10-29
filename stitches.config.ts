@@ -1,34 +1,19 @@
+import colors from "@/lib/colors"
+import { StringMap } from "@/types"
 import { createStitches } from "@stitches/react"
 import { map } from "fp-ts/lib/Record"
-import tailwindColors from "tailwindcss/colors"
 import defaultTheme from "tailwindcss/defaultTheme"
-
-type FlatMap = Record<string, string>
-type StringPair = [string, string]
-type TailwindColors = typeof tailwindColors
-
-const { entries, fromEntries } = Object
-
-const flattenTailwindColors = (colors: TailwindColors): FlatMap => {
-  const flatten_ = (colors: TailwindColors, prefix = "") =>
-    entries(colors).flatMap(([name, colorValue]): StringPair[] =>
-      typeof colorValue == "string"
-        ? [[prefix + name, colorValue]]
-        : flatten_(colorValue, prefix + name)
-    )
-  return fromEntries(flatten_(colors))
-}
 
 export const stitches = createStitches({
   prefix: "",
   theme: {
     colors: {
-      ...flattenTailwindColors(tailwindColors),
+      ...colors,
       // Alias
       primary: "$gray900",
       secondary: "$gray700",
       tertiary: "$gray500",
-      link: "$blue500",
+      link: "$violet500",
       background: "$gray100",
       border: "$gray900",
     },
@@ -38,7 +23,7 @@ export const stitches = createStitches({
   },
   utils: {},
   media: {
-    ...map((px) => `(min-width: ${px})`)(defaultTheme.screens as FlatMap),
+    ...map((px) => `(min-width: ${px})`)(defaultTheme.screens as StringMap),
     dark: "(prefers-color-scheme: dark)",
   },
 })
@@ -48,7 +33,7 @@ export const darkTheme = stitches.createTheme({
     primary: "$gray100",
     secondary: "$gray200",
     tertiary: "$gray300",
-    link: "$blue500",
+    link: "$violet500",
     background: "$gray900",
     border: "$gray100",
   },
