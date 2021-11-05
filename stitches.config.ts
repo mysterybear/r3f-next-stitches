@@ -3,6 +3,7 @@ import { StringMap } from "@/types"
 import { createStitches } from "@stitches/react"
 import { map } from "fp-ts/lib/Record"
 import defaultTheme from "tailwindcss/defaultTheme"
+import { sizes } from "@theme-ui/preset-tailwind"
 
 export const stitches = createStitches({
   prefix: "",
@@ -20,6 +21,7 @@ export const stitches = createStitches({
     space: {
       ...defaultTheme.spacing,
     },
+    sizes,
   },
   utils: {},
   media: {
